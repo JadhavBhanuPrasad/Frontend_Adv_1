@@ -1,0 +1,76 @@
+<!-- 
+    -together functionality and data in oops
+    -not pure object oriented but object based, it introduced in ES6
+    -js later version have classes(ES5,ES6)
+
+    if we write anything like constructor or .prototype then prototype inside a prototype is created
+
+    -The JavaScript prototype property allows you to add new properties to object constructors
+
+    PROTOTYPE INHERITANCE : 
+        -All JavaScript objects inherit properties and methods from a prototype:
+        -Date objects inherit from Date.prototype, Array objects inherit from Array.prototype, Person objects inherit from Person.prototype
+        -The Object.prototype is on the top of the prototype inheritance chain:
+        -Date objects, Array objects, and Person objects inherit from Object.prototype.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.Object Literal
+        const user = {
+            'name' : 'John' ,   //key value pair where key is in quotations
+            'Password' : '1234'
+        }
+
+        var str = JSON.stringify(user)
+
+        // console.log(str)
+        // console.log(str[3])
+
+        var jso = JSON.parse(str)
+        // console.log(jso)
+        // console.log(jso.name)
+        // console.log(jso.Password)
+
+
+        //2.new keyword
+        const user2 =new Object()
+        user2.Name = 'Sam'
+        user2.Password = '2323'
+        user2.mobile = 8399382939
+        // console.log(user2)
+
+        //3. Object constructor
+        function Product(name , price) {
+            this.name = name;
+            this.price = price;
+
+            this.display = function Display() //if it is written here everytime a object is created this method is created for that object.it's a waste of memory, so instead of declaring here declare outside using '.prototype'. Every object has one prototype
+            {
+                console.log(this.name,this.price)
+            }
+        }
+        //PROTOTYPE : every object has prototype ineternally
+        //PROTOTYPE INHERITANCE
+        Product.prototype.category = 'Electronics'//it creates only one instance for all the objects so memory is saved
+
+        Product.prototype.display = function ()
+        {
+            console.log(this.name,this.price)
+        }
+        const prod2 = new Product('apple',169000)
+        const prod3 = new Product('samsung',39399)
+        console.log(prod2)
+        console.log(prod3)
+        // prod2.display()
+        // prod3.display()
+    </script>
+</body>
+</html>

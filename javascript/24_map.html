@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fruits = new Map()
+
+        //set
+        fruits.set("apples",400)
+        fruits.set("bananas",600)
+        fruits.set("oranges",700)
+
+        //change existing values
+        fruits.set("apples",500)
+
+        //get
+        fruits.get("apples")
+        //delete
+        fruits.delete("apples")
+        //clear
+        // fruits.clear()
+        //has
+        fruits.has("apples")
+        // console.log(fruits)
+
+        let a = [1,2,3,4,3,3,2,3,5,2,4,4,6,4,3,33,2,1,33]
+        const result = new Map()
+        let cnt = 0
+        for (x of a) {
+
+            if(result.has(x)) {
+                result.set(x,result.get(x)+1)
+            }
+            else {
+                result.set(x,1)
+            }
+        }
+        // console.log(result)
+
+        var m2 = new Map();
+
+        m2.set(1998,'amazon')
+        m2.set(2000,'hp')
+        m2.set(1996,'dell')
+        m2.set(1999,'mac')
+        m2.set(1997,'sap')
+
+        maxk = -1
+        for(x of m2){
+            maxk = Math.max(maxk,x[0])
+        }
+        console.log(m2.get(maxk))
+
+        maxi = 0
+        maxs = 0
+        for(x of m2){
+            maxi = Math.max(maxi,x[1].length)
+            
+        }
+        console.log(maxs)
+
+
+        //DATE 
+        let x = new Date()
+        console.log(x)
+    </script>
+</body>
+</html>

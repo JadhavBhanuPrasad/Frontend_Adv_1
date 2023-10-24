@@ -1,0 +1,61 @@
+<!-- 
+    ONLOAD :
+    -the onload event occurs when an object has been loaded.
+    -onload is most often used within the <body> element to execute a script once a web page has    completely loaded all content
+    -<body onload="myFunction()">
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" onmouseover="changestyle()">
+    This is the div tag.
+    </div>
+
+    <div id="div2">
+        This is second div tag
+    </div>
+    <button id="click">
+        click to change background
+    </button>
+    <br>
+    <h5>TYPE </h5>
+    <input type="text" id="inp">
+    <h5>YOU TYPED</h5>
+    <p id="op"></p>
+    <script>
+        function changestyle()
+        {
+            document.getElementById('div1').style = 'background-color : yellow; color : black';
+        }
+
+        document.getElementById('div2').addEventListener('mouseover', function() {
+            document.getElementById('div2').style = 'background-color : yellow; color : black;';
+        })
+        // console.log(document.getElementsByTagName('body'))
+        document.getElementById('click').addEventListener('click', function(){
+            document.getElementsByTagName('body')[0].style = 'background-color:black; color:white';
+            document.body.style = 'background-color:black; color:white';
+        })
+
+
+        // document.getElementById('inp').addEventListener('keypress',function() {
+        //     document.getElementById('op').innerHTML = document.getElementById('inp').value
+        // })
+        // document.getElementById('inp').addEventListener('keyup',function() {
+        //     document.getElementById('op').innerHTML = document.getElementById('inp').value
+        // })
+
+
+
+        // document.getElementById('inp').addEventListener('change',function() {
+        //     document.getElementById('op').innerHTML = document.getElementById('inp').value
+        // })
+    </script>
+</body>
+</html>

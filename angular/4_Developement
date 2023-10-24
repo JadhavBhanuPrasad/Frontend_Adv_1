@@ -1,0 +1,34 @@
+Build phase
+Run Time phase
+
+Two ways to compile
+
+Ahead of Time (AOT) - converts html to type script - does it even before html takes it and renders it
+JIT - Just In Time -
+after angular 9 ,compiler using is AOT
+depends on value of aot property(t or f), by default aot is set to true
+
+COMPONENT LIFE CYCLE :
+
+these are all methods
+ngOnChanges - if propery of an angular directive changes(*ngIf,*ngFor), ngOnChanges is called // happens every time
+
+ngOninit - when component initilization
+
+ngDoCheck - instead of ngOnChanges when angular fails to recognize the changes
+
+class Appcomponent implements DoCheck {  //all like this only written
+    ngDoCheck()
+}
+
+ngAfterContentInit - right after angular fnishes initilization of all content in a directive
+
+ngAfterContnentChecked - after the directive content is checked
+
+ngAfterViewInit - after the component's view is instantiated
+
+ngAfterViewChecked - after the comonent's content is checked
+
+ngOnDestroy - when component is destroyed
+
+

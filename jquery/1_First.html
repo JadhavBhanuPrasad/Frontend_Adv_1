@@ -1,0 +1,85 @@
+<!-- 
+    reduces whatever written in js
+    it is a js library
+
+    val - is only for input controls
+    html - is used for elements
+    text equivalent of  inner html
+   text - is used for elements
+
+   button -> both text and val works
+
+   
+   document.onload
+
+   3 ways to include jquery -> npm, download, cdn
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+ </head>
+ <body>
+    <p class="p1"></p>
+    <button id="btn1">CLICK</button>
+
+
+    <div class="p3">
+      <div id="p2"></div>
+      <button id="btn2">CLICK2</button>
+    </div>
+
+
+    <div>
+         <label for="tb">TEXT</label>
+         <input type="text" id="tb">
+         <button id="b3">CLICK for a JoKe</button>
+    </div>
+
+
+   <script>
+      // $(document).ready( function() {
+      //    // alert('hi')
+      // })
+
+      //shorthand
+      // $(function()
+      // {
+      //    alert('hi')
+      // })
+
+      //document.gebi() is equal to  $('.p1')
+
+      $(function() { //$(function()) is equivalent to document.ready
+
+         $('#btn1').click( function() {  //on click
+            // $('.p1').text('Hellow text') //.innerhtml is written as this
+            $('.p1').html('<b>HELLOW</B') 
+         })
+
+         $('#btn2').hover(function() {
+            $('#p2').text('Babaa')
+        })
+
+         $('.p3').css({'color' : 'red', 'background':'yellow'})
+         // $('').css({'color' : 'red', 'background':'yellow'})
+
+         $('#btn2').click( function() {
+         $('body').css({'background' : 'black'})
+         } )
+
+         $('#tb').val('lorem eiroasp  oaisuid  sid  ')
+         $('#b3').click(  function() {
+         $('#tb').val('You are a joke')
+         })
+        
+      })
+
+
+   </script>
+ </body>
+ </html>

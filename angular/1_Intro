@@ -1,0 +1,66 @@
+developed by google
+these are single page application, means one html page will only run
+we have to figure out how to load all the pages in single html page
+built in dependency injection
+client side typescript based structure
+disadvantage is that every 6 months new version of angular released by google
+
+first versio -> angular js...js as language..........mvc structure..........
+next versions -> angular...typescript as language...component based structure...huge support to bootstrap and others
+
+both are completely different
+
+ng g c sample //to create component
+
+COMPONENT in Angular : a part of the user interface(whole website is breaking into parts)
+each component has 4 files...spec.ts for testing....karma and jasmine frameworks used for testing
+
+
+DATA BINDING :  only data bw ts and html of same component
+
+1 One way : typescript to html
+	i. string interpolation -{{}}
+	ii. property binding - [] //bind to proerties of html property...[style]
+	iii. event binding - ()
+
+2 Two way : both sides..ts to html and html to ts..like taking inputs
+ngModel - [()]
+FormsModule -> import this for ngModel to work
+
+DIRECTIVE : 
+Component directives : is where we define our component, it has three properties, we can make it 5 also, selector, template url, styles, template, style url
+
+Structureal directives : manipulates the dom...like append child..add child..etc...*ngIf, ngSwitch, *ngFor
+use ng only here,
+
+
+Attribute directives : [ngStyle] [ngClass]
+we have to give object for [ngStyle] in json format
+if we give [style] then give string form
+
+
+if you directly want to give value " 'Yellow' "
+if you directly want to give variable "r1"
+
+
+we can put services in provider in app module. ts file
+
+httpclient method returns an observable
+
+router-outlet -> its like a place holder for our template, 
+
+path and component in router
+
+route/: to pass parameters
+
+observable in rxjs module
+
+package.json has dependencies
+
+aot and jit are two compilers 
+aot is default
+angular.json has info about 
+
+compiles even before the browser downloads -> AOT..ahead of time
+converting ts to js is called transpilation
+

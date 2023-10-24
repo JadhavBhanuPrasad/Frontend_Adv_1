@@ -1,0 +1,107 @@
+<!-- 
+    STRINGS: is a character array
+    
+    concat() -- combination of two or more strings
+    indexOf() -- position of char value present in given string
+    lastIndexOf() --" " " " from last
+    match() -- search for specifx reg ex
+    substr() -- index and length
+    substring() -- first index and last index
+    slice() -- +ve as well as -ve index
+    split() -- array of strings based on given char
+    trim() -- trim white spaces
+
+
+    INTERPOLATION :
+    `Welcome ${first_name}, ${lastname}!`
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>STRINGS</h1>
+
+    <script>
+        /*
+        var name = 'john'
+        var designation = 'manager'
+        var sentence = `this is a 
+        multiline sentence` //it is read as a single string but for us it is multiline(backtick)
+
+        //for-in loop : here x is index ... 0 1 2 3....this can be used for any iterable items...lists
+        
+        for(x in name) {
+            // console.log(x)
+            // console.log(name[x])
+            name.charAt(x)
+            console.log(name.charAt(x))         //takes index as input
+            console.log(name[x].charCodeAt())   //just keeep string_name[index].charCodeAt()
+        }
+
+
+        // for-of loop : here x is value ... j o h n
+        for(x of name) {
+            console.log(x)
+            console.log(x.charCodeAt());
+        }
+
+        // for(let i=0; i<name.length; i++)
+        // {
+        //     console.log(name[i]);
+        // }*/
+
+/*STRING FUNCTIONS */
+//index is inclusive
+        var email = "rohan@gmail.com"
+        // console.log( email.substr( email.indexOf('@')+1 ) ) //gmail.com
+        // console.log( email.substr( email.indexOf('@')+1,3 ) ) //gma
+        // console.log( email.substr( email.indexOf('@')+1,-3 ) ) //wont work
+
+        
+        //(a,b) a<b : a is inclusive and b is exclusive
+        // console.log (email.substring( email.indexOf('@'),3)) //an
+        // console.log (email.substring( email.indexOf('@'),8))  //@gm
+        // console.log (email.substring( email.indexOf('@')+1,email.indexOf('.'))) //gmail
+
+
+        //make first letter capital
+        var Sent = "this is a sentence."
+        var SplitedSent = Sent.split(" ")
+        console.log(SplitedSent)
+
+        for(x of SplitedSent) {
+            var res = "";
+            console.log(x)
+            console.log( x[0].toUpperCase() )
+            res = res + x[0].toUpperCase()
+            console.log(res)
+        }
+            var res = ""
+        for(x in SplitedSent) {
+            res+=SplitedSent[x][0].toUpperCase()+ SplitedSent[x].substr(1) +' ';
+        }
+        console.log(res)
+
+        //reverse the string
+        var name = "This is a sentenence"
+        var revStr = ""
+        
+        for(x in name){
+            console.log(name[x])
+            revStr = name[x] + revStr;
+        }
+        console.log(revStr)
+        
+
+        //INTERPOLATION
+        // let name = "Jungle"
+        // let text = `Welcome to the ${name}`
+        // console.log(text)
+    </script>
+</body>
+</html>

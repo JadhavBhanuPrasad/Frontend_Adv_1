@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// //QUESTION 1 print longest word
+    let str = "this is our organisation hakunamatataha"
+    let splitStr = str.split(" ")
+
+    maxL=0
+    currMax = 0
+    let ans = ''
+    for(i of splitStr) {
+        maxL = Math.max(maxL,i.length)
+        if(maxL > currMax) {
+            ans = i
+            currMax = maxL
+        }
+    }
+    console.log(ans)
+    
+//QUESTION 2 : print string in alphabetical order 
+
+// let str = "mary"
+// let spl = str.split('')
+// console.log(spl)
+// spl.sort()
+// let ans = spl.join("")
+// // let ans = spl.toString()
+// console.log(ans)
+    </script>
+</body>
+</html>

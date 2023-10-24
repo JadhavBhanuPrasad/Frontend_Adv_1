@@ -1,0 +1,96 @@
+<!-- 
+    if script written before, it gets executed first , means imediately after body
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+
+    <div id="div1">
+        <p id="p1">
+            first
+        </p>
+        <p id="p3">
+            fourth
+        </p>
+    </div>
+
+    <div class="div2">
+        <p class="p2">
+            second
+        </p>
+        <p class="p2">
+            third
+        </p>
+    </div>
+    <button onclick="hidee()">Hide first and fourth</button>
+
+    <h2>Image</h2>
+
+    <img src="https://media.istockphoto.com/id/1433211776/photo/woman-silhouette-in-front-of-the-ocean-at-sunset.webp?b=1&s=170667a&w=0&k=20&c=xGzw_4wTjK0uKJLS42lR7xPsD7tGRTrx-mWBl0ylih4=" alt="" width="200" height="200" id="image">
+
+    <button onclick="changeImg()" id="bttn">next</button>
+    <script>
+        // //by id
+        // document.getElementById('p1').innerHTML = 'changed text'
+        // document.getElementById('div1').style = 'background-color : pink; color:darkblue'
+
+        // //by class
+        // document.getElementsByClassName('p2')[1].style = ' border : 1px solid pink'
+        // document.getElementsByClassName('p2')[0].innerHTML = 'replaced_second' //to apply for all classes with same name you have to iterate over this array
+
+        // //by query selector : we can select id, element and class
+        // document.querySelector('#p1').style = 'background-color : red'
+        // document.querySelector('.p2').style = 'background-color : yellow'
+
+        var list = document.querySelectorAll('.p2')
+        for(let i=0; i<list.length; i++)
+        {
+            list[i].style = 'background-color : red'
+        }
+
+
+        var list2 = document.querySelectorAll('#p1,#p3,.p2')
+        for(let i=0; i<list2.length; i++)
+        {
+            list2[i].style = 'background-color : green'
+        }
+        
+        var flag = true
+        function hidee()
+        {   
+            if(flag) {
+                document.getElementById('div1').style = 'display:none'
+                flag = false
+            }
+            else {
+                document.getElementById('div1').style = 'display:block'
+                flag = true
+            }
+        }
+
+
+        function changeImg() {
+            let img = document.getElementById('image')
+            let btn = document.getElementById('bttn')
+            if(flag){
+                img.src = 'https://img.freepik.com/free-photo/flowing-purple-mountain-spiral-bright-imagination-generated-by-ai_188544-9853.jpg'
+                flag = false
+                btn.innerText = 'prev'
+            }
+            else{
+                img.src = 'https://media.istockphoto.com/id/1433211776/photo/woman-silhouette-in-front-of-the-ocean-at-sunset.webp?b=1&s=170667a&w=0&k=20&c=xGzw_4wTjK0uKJLS42lR7xPsD7tGRTrx-mWBl0ylih4='
+                flag=true
+                btn.innerText = 'next'
+            }
+        
+        }
+    </script>
+
+ </body>
+ </html>

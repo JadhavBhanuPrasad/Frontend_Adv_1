@@ -1,0 +1,82 @@
+<!-- !
+    simplify callback nesting using promises advantage is that function will run even if there is problem with one of the functions
+    asynchronou
+
+    one way of making program asynchronous
+    
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+
+
+    <script>
+
+function register(){
+return new Promise( (resolve,reject) => {
+    setTimeout( function() {
+        console.log('register done')
+        resolve();
+    } ,4000 )
+})
+}
+function sendEmail(){
+    return new Promise( (resolve,reject) => {
+        setTimeout( function() {
+        console.log("email sent")
+        resolve()
+    },3000)
+    } )
+}
+function login() {
+    return new Promise( (resolve,reject) => {
+        setTimeout( function() {
+        return reject('Login failed')
+        
+    },5000)
+    })
+}
+
+function displayUserData()
+{
+    console.log("Displaying user data")
+
+    return new Promise((resolve,reject) => {
+        setTimeout(function() {
+            throw console.error('new error occured')
+            console.log('displaeyd user data')
+            // resolve();
+        },2000)
+    })
+}
+
+
+// //CALLBACK HELL
+// register(function(){
+//     sendEmail( function() {
+//         login(function() {
+//             displayUserData();
+//         })
+//     })
+// })
+
+
+register()
+.then(sendEmail)
+.then(displayUserData)
+.catch( (e) => {
+    console.log(e)
+} )
+.finally( () =>{
+    console.log('all done')
+} )
+
+    </script>
+ </body>
+ </html>

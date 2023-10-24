@@ -1,0 +1,6 @@
+interaction b/w parent component and child component
+
+@input and @output decarators are used
+@input for paretnt to child
+@output for child to parent
+

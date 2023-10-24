@@ -1,0 +1,41 @@
+node.js build on google's v8 engine
+only js applcn which connects to database
+js - cannot connect to database...api is used to connect with database
+node 
+npm - to install packages...package for bootstrap,angular,typescript...etc
+whenever we install node, npm comes along with it
+REPL -> Read Eval Print Loop 
+REPL commands : ctrl+c : stop
+                .save : save the session
+packgae.json -> containes all dependencies
+
+two types to create
+npm init -> creates pckage.json(ask questions)
+npm init --yes -> creates without any questions
+
+//first set values
+npm set init-license 'MIT'
+npm set init-author-name "bhanu"
+//then initialize the values
+npm init --yes
+
+//to get author name
+npm config get init-author-name
+(or) npm get init-author-name
+//to delete license
+npm config delete init-license
+
+npm init --yes -> every time we modify , run it
+
+npm install 'name'
+npm uninstall 'name'
+
+version 2.3.1
+major_2,minor_3,patch_1
+
+bug fixes->patch
+minor changes->minor
+breakthroug changes->major
+npm install bootstrap@5.3 ->latest in the patch
+npm install bootstrap@5   ->latest in minor and patch
+

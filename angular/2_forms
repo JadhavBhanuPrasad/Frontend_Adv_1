@@ -1,0 +1,50 @@
+ngTemplate is for ngIf
+
+two different types
+1.template driven Forms
+2.reactive forms/model driven forms
+
+interenally depends on 3 main classes(4 actually)
+
+FormControl - each input is considered 
+FormGroup - all form controls in this
+FormArray - when we want to add in dropdown
+
+TEMPLATE DRIVEN 
+most of the code is controlled by html..template meaans html and data binding is done by [(ngmodel)]
+formcontrol and formgroup created internally
+
+ngForm -> for forms
+ngModel -> text box
+ngSubmit is same for both
+
+ngForm and ngModel from FormsModule
+
+#is used for naming #contact
+
+ng g cl model/user -> creates class named 'user' in model folder
+
+
+control properties 
+ng-valid - true if valid
+ng-invalid - 
+ng-pristine - by default pristine
+ng-dirty   - when you type something in it
+ng-untouched - by default untouched
+ng-touched   - when clicked on it
+
+REACTIVE FORMS / MODEL DRIVEN FORMS -> large projects
+
+FormGroup -> for forms
+FormControl -> text box
+ngSubmit is same for both
+
+import reactive forms module
+formcontorl -> text controls ->2 way data binding occurs by this
+ngmodel ngform not used anymore
+new FormControl('') is create
+
+to avoid default beaviour  -> novalidate
+
+name elements in angular -> #
+

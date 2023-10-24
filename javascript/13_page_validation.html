@@ -1,0 +1,88 @@
+
+<!-- 
+
+    pattern : ^ start if used insdie square bracket it is like not  $ end
+    pattern = ^[A-Z]$
+    pattern = ^[A-Za-z]$  //Both upper and lower
+    pattern = ^[A-Z a-z]$  //Both upper and lower and space also allowed
+    ^[A-Za-z0-9]${4,7} //alpha numeric of min size 4 max size 7
+    ^[A-Za-z0-9]${7} //alpha numeric of size 7
+    ^[A-Za-z0-9]${7,} //alpha numeric of min size 7
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+<br><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+<br><br>
+        <label for="password">Password</label>
+        <input type="text" name="password" id="password">
+<br><br>
+        <label for="cpwd">Confirm Password</label>
+        <input type="text" name="cpwd" id="cpwd">
+<br><br>
+        <label for="phone">Phone</label>
+        <input type="number" name="phone" id="phone">
+<br><br>        
+        <input type="submit" value="Register" id="reg">
+
+    </form >
+
+    <script>
+        
+
+        document.getElementById('reg').addEventListener('click', function() {
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var cpwd = document.getElementById('cpwd').value;
+        var phone = document.getElementById('phone').value;
+        // var pattern = /^[A-Z]{1,}$/;
+        // var pattern = /^[A-Z]{1}[a-z]{5}$/;
+        var pattern = /^[A-Z]{1}[a-z0-9]{5}$/;
+        var email_pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            if(name == "") {
+            alert('name is mandatory')
+            return false
+        }
+
+        if(pattern.test(name)) 
+            alert('valid')
+        else
+            alert('invalid')
+        
+
+        if(email_pattern.test(email)) 
+            alert('valid email')
+        else
+            alert('invalid email')
+        
+
+        if(password === cpwd) {
+            alert('registered successful')
+            return false
+        }else{
+            alert('passwords dont match')   
+        }
+        })
+
+        
+
+    </script>
+
+</body>
+</html>

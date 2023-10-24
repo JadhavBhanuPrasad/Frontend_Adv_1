@@ -1,0 +1,49 @@
+
+<!-- 
+    ARRAY indexing is done
+    SET is unique value... no indexing
+    MAP is key value pair
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //SET
+        var numbers = new Set([1,2,3,4,3,3,2,3,5,2,4,4,6,4,3,33,2,1])
+        numbers.add(44)
+        numbers.delete(4) //deletes only that which is to be deleted
+        // numbers.clear()  whole data is cleared
+        for(n of numbers) {
+            // console.log(n)
+        }
+        for(n of numbers.entries()) {
+            // console.log(n)
+        }
+        // console.log('size',numbers.size)
+
+        //question
+        let a = [1,2,3,4,3,3,2,3,5,2,4,4,6,4,3,33,2,1,33]
+        let s = new Set([1,2,3,4,3,3,2,3,5,2,4,4,6,4,3,33,2,1,33])
+
+        for (n of s) {
+            let cnt =0;
+            for( i of a) {
+                if(i == n) {
+                    cnt++
+                }
+            }
+            console.log(n,cnt)
+        }
+        console.log(numbers)
+    </script>
+
+</body>
+</html>

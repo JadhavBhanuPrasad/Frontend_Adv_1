@@ -1,0 +1,67 @@
+
+<!-- 
+    EVENT BUBBLING:
+    default : event called from child to upwards by default, only if all have same event( click ) 
+    if we want other wise : use capture:true in eventlistener, it reverses the order..from parent to upwards
+
+    remove 'capture : true' and add 'e.stopPropagation()' in child it stops event bubbling.
+
+    'e.stopImmediatePropogation' will stop all those which are there in child,like if there are multiple clicks in child, then stopImmeditaePropagation on one of it  will stop all other and call only that which it is called.
+
+    There are three phases : Bubble, Capture and Target
+
+    Target - when you click
+    remaining will be in bubble phase if capture is given false  and it will be in capture phase if it's given true.
+    
+                       
+
+    'e.eventPhase' value 
+
+        -bubble   "     "   -> 3
+        -target phase value -> 2
+        -capture  "     "   -> 1
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body style="display: flex; justify-content: center; align-items: center;">
+<div class="grandparent" style="width:600px;height: 600px; background: black; display: flex; justify-content: center; align-items: center;">
+    <div class="parent" style="width:400px;height: 400px; background: goldenrod; display: flex; justify-content: center; align-items: center;">
+        <div class="child" style="width:200px;height: 200px; background: red;">
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    var child = document.querySelector('.child')
+    var parent = document.querySelector('.parent')
+    var grandparent = document.querySelector('.grandparent')
+
+
+    
+    child.addEventListener('click',function(e) {
+        console.log('child click event')
+    })
+
+    parent.addEventListener('click',function(e) {
+        console.log('parent click event')
+    })
+
+    grandparent.addEventListener('click',function(e) {
+        console.log('grandparent click event')
+        e.stopPropagation
+        // e.stopImmediatePropagation
+    })
+    
+</script>
+</body>
+</html>

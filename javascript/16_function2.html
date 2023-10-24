@@ -1,0 +1,45 @@
+<!-- 
+    FUNCTION and var are hoisted..we can call it anywhere
+
+    FUNCTION EXPRESSION is not hoisted..we have to call only after declaring function
+    FE is stored in let or const , so can't be hoisted
+    but if stored in var it can be, but it shouldnt be written in var logically
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        Message(); //no error because hoisted
+        // Message1(); error->not hoisted
+
+        //function
+        function Message()
+        {
+            console.log('hello')
+        }
+            Message()
+
+
+
+        //function expression
+        const Message1 = function() {
+            console.log('Hi')
+        }
+            Message1()
+
+        const Add = function(a,b) {  //'var Add = function(a,b)' shouldn't be used because 'var' can be redeclared, and function cannot be declared and also function cannot be also overriden in js..there is no polymorphism. 'let' can be used if the FE is called after declaring(as it is not hoisted) ,but logically only const should be used because we want function to be uniform
+            console.log(a+b)
+        }
+            Add(3,4);
+    </script>
+</body>
+</html>

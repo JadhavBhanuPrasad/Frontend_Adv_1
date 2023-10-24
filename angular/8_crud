@@ -1,0 +1,13 @@
+happens as admin as the user
+
+array of products returned
+if one particular product getbyid
+
+json-server --watch products.json 
+
+
+ngOnInit() -> called when component is initialised
+or in constructor because it is called when component is created
+
+http client method always return an observable
+we should subscribe to access it's data

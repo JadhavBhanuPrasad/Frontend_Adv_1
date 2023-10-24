@@ -1,0 +1,105 @@
+<!-- 
+        
+    -switch only checks for equality not greater than lessthan, 
+    -default is not mandatory unlike other languagesx
+    -break also not necessary in default if written at last
+     switch(variable) 
+    {
+        case value1:
+            statements;
+            break;
+        case value2:
+            statements;
+            break;
+
+        default:
+            statement;
+            break;
+    }
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>
+        <label for="fno">First Number</label>
+        <input type="number" name="fno" id="first">
+    </p>
+
+    <p>
+        <label for="sno">Second Number</label>
+        <input type="number" name="sno" id="second">
+    </p>
+    <p>
+        <label for="oper">Enter the operation you need</label>
+        <input type="text" name="oper" id="operator">
+    </p>
+
+
+        <input type="button" onclick="opdemo()" value="Perform Operation" />
+        <!-- <button onclick="opdemo()">click</button> -->
+
+
+    <p>
+        <label for="res">Result</label>
+        <input type="number" name="res" id="result" >
+    </p>
+
+    <script>
+        // var grade = 'palak';
+
+        // switch(grade) {
+        //     case 'palak': 
+        //     case 'A' :
+        //         console.log('worse');
+        //         break;
+
+        //      case 'b':
+        //      case 'B':
+        //         console.log('very bad');
+        //         break;
+
+        //     case 'c':
+        //     case 'C':
+        //         console.log('bad');
+        //         break;
+            
+        //     default:
+        //         console.log('excellent');
+
+
+        function opdemo() {
+            let a = parseInt(document.getElementById('first').value);
+            let b = parseInt(document.getElementById('second').value);
+            let c = document.getElementById('operator').value;
+
+            switch(c) {
+                case '+' :
+                    (document.getElementById('result').value) = (a+b);
+                    break;
+                case '-' :
+                    document.getElementById('result').value = a-b;
+                    break;
+                case '*' :
+                    document.getElementById('result').value = a*b;
+                    break;
+                case '/' :
+                    document.getElementById('result').value = a/b;
+                    break;
+                default :
+                    alert('Invalid operation');
+                    break;
+            }
+        }
+
+            
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+PIPES 
+to format data 
+| | is symbol
+we alwaays use in html and string interpolation
+{{Name | uppercase}}
+{{Name | lowercase}}
+{{tdate | date | uppercase}}
+{{tdate | date : 'shortDate'}}
+{{tdate | date L }}
+{{colors | slice : 3 : 5}}
+{{6780 | currency:"INR" :true}}
+{{3.74394 | number : '3.4'}}

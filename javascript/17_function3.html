@@ -1,0 +1,115 @@
+<!-- 
+    ARROW or LAMDA functions
+    REDUCE
+
+FILTER :
+    -creates a new array filled with elements that pass a test provided by a function.
+    -does not execute the function for empty elements.
+    -does not change the original array.
+    -array.filter(function(currentValue, index, arr), thisValue)
+
+FIND :
+    -returns the value of the first element that passes a test.
+    -executes a function for each array element.
+    -returns undefined if no elements are found.
+    -does not execute the function for empty elements.
+    -does not change the original array.
+    -array.find(function(currentValue, index, arr),thisValue)
+
+FOR EACH :
+    -calls a function for each element in an array.
+    -is not executed for empty elements.
+    -array.forEach(function(currentValue, index, arr), thisValue)
+
+Immediately Invoked Function Expressesion(IIFE):
+    cannot call again..declaring and calling same time..reusability not there
+    use when page loads
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Multiply1(a,b)
+    {
+        return a*b
+    }
+        console.log(Multiply1(3,3))
+
+    const Multiply2 = function(a,b)
+    {
+        return a*b
+    }
+        console.log(Multiply2(3,3))
+
+    //******ARROW FUNCTION******
+    // const Multiply3 = (a,b) => 
+    // {
+    //     a*b
+    // } no need brackets if single line
+    const Multiply3 = (a,b) => a*b
+        console.log(Multiply3(3,3))
+
+    
+
+    const greet1 = function(a) {
+        console.log('hello '+a)
+    }
+        greet1('nag')
+    
+    const greet2 = a => console.log('hello '+a)
+        greet2('nag')
+
+    //***FOR EACH*** it just iterates and we have to give the conditions inside..filter and find will do it automatically 
+    var numbers = [2,4,6,8,10]
+    // numbers.forEach(x => console.log(x))
+
+
+    //***FILTER*** all the elements that match the condition in new array
+    const result1 =  numbers.filter( 
+        x => {
+            return (x>4)
+        }
+     )
+     console.log(result1)
+
+
+    //****FIND**** first element that matches the conditon
+    const result2 =  numbers.find( 
+        x => {
+            return (x>4)
+        }
+     )
+     console.log(result2)
+    
+
+    let result3=0
+    numbers.forEach( x=>
+   { result3+=x })
+    console.log("total1 = ",result3)
+
+//reduce useful for array objects
+//when everything is reduced to a single value use reduce
+    const total = numbers.reduce( (result4,item) => {
+        return result4+=item
+    },0)
+
+    console.log("total2 = ",total)
+
+
+    console.log("IIFE")
+    //we can reuse this multiply6 multiple times 
+    const Multiply6 = (function(a,b)
+    {
+        console.log(a*b)
+        return a*b
+    })(4,6)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!-- 
+    PARENT:
+    parents : all the parents
+    parent : immediate parent
+    parentsUntil('div') div in exclusive
+
+
+    SIBLING:
+    next() : immediate next
+    nextAll() : all next
+    nextuntil()
+
+    prev()
+    prevAll()
+    prevuntil()
+
+    CHILDREN:
+    children() : immediate children
+    find() : nested children
+
+    FILTERING:
+    first()
+    last()
+    has()
+    not()
+        Return all <p> elements that do not have the class name "intro":
+        $("p").not(".intro")
+
+    clone()
+
+    tr:gt(2) rows whose index is greater than 2, 2 is not inclusive
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="p">
+        <p>paragraph inside div but first</p>
+    </div>
+    <p>
+        Paragraph outside div 
+    </p>
+    <div class="pp">
+        <h1>paragraph without p</h1>
+    </div>
+    <div>
+        <p>inside div</p>
+
+        <table id="t1">
+            <tr>
+                <td>col1</td>
+                <td>col2</td>
+                <td>col3</td>
+                <td>col4</td>
+            </tr>
+            <tr>
+                <td id="4">col1</td>
+                <td>col2</td>
+                <td>col3</td>
+                <td>col4</td>
+            </tr>
+            <tr>
+                <td>col1</td>
+                <td>col2</td>
+                <td>col3</td>
+                <td id="3">col4</td>
+            </tr>
+            <tr>
+                <td>col1</td>
+                <td>col2</td>
+                <td>col3</td>
+                <td>col4</td>
+            </tr>
+        </table>
+        <div class="p2">
+            this is to be cloned in div3
+        </div>
+        <div class="div3">
+
+        </div>
+        <button>alks</button>
+    </div>
+
+    <script>
+        $(function() {
+
+            // $('td').parent().css({'background':'red'})
+            // $('#4').parentsUntil('table').css({'background':'red'})
+            // $('td').parentsUntil('div').css({'border':'1px solid green'}) //border not working
+            // $('#4').next().css({'border':'1px solid green'})
+            // $('#4').nextAll().css({'border':'1px solid green'})
+            // $('#3').prev().css({'border':'1px solid green'})
+            // $('#3').prevAll().css({'border':'1px solid green'})
+            
+            // $('div').children.eq(0).css() //only first child of div
+            // $('table').children().eq(0).css('background','green') //only third child of div
+            // $('table').find('tr').css('background','yellow')
+
+            // $('p').first().css('color','red')
+            // // $('div').has('p').css('background','honeydew')
+            // $('div').not('.p').css('background','yellow') //here in not(' ') it should be class name or id not the children of div which have paragraph
+
+            // $('tr:gt(1)').css('background-color','yellow')
+
+            $('.div3').append( $('.p2').clone())
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!-- 
+    -Document Object Model(DOM) : object is HTML and all it's elements inside it.
+    -make websites dynamic using JS
+    -It is a scripting language(runs on browser)
+    -It is interpreted language(line by line)
+    -Case-sensitive language
+    -Effieciency incrases if script included in body as page loads first and then script.
+    -It's object based language
+    -Lower Case(Case Sensitive)
+    -European Computer Manufacturing Association(ECMA-6) supported currently..the latest version
+
+    **DATA TYPES**
+
+    PRIMITIVE DT: Number, Boolean, String,..
+    REFERENCE DT: Object, Symbol, null
+    String - backtick is used when we want to write in multilines (`HELLO`)
+
+    Number - "3e5// 3*10^5" Undefined,Nan(Not an Number),+Infinity,-Infinity
+
+    BigInt - (n at the end...like "90404850404949n")
+
+    Boolean - true or false
+
+    undefined - declare without a value...like "let a...it's datatype is UNDEFINED"
+
+    null - declare as null...like "let a = null"....it's datatype is OBJECT"
+
+    Object - key values pairs of collection of data
+
+    Symbol - data tyep whose instances are unique and immutable
+
+    **VARIABLES**
+    var 
+    -it is hoisted(goes to the top of the document)
+    -can be redeclared
+    -value can be changed
+    -global scoped(so you can redeclare inside function)
+    
+    let
+    -not hoisted
+    -cannot be redeclared
+    -value can be changed
+    -block scoped
+
+    const
+    -not hoisted
+    -cannot be redeclared
+    -value cannot be changed
+    -block scoped
+
+    **HOISTING**
+    putting on top(only declarations not initialisations)
+    all declarations done using var keyword are kept on top.
+    ex..console.log(x);var x;
+
+    if variable name not mentioned it takes it as var
+
+   
+
+    
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // alert('hi');
+        // document.write(1/0);
+
+        // var x = 10
+        // let y = 20
+        // // const z --> error..it needs initialization
+        // const z = 29
+
+
+        // x='hi'
+        // y=true
+        // z=1
+
+        // console.log(x)
+        // console.log(y)
+        // // console.log(z)//error
+
+        var x=10;
+        var y; //undefined value
+        console.log(x+y); //NaN
+
+        x=10;
+        y; //here is error 
+        console.log(y)    //undefined
+        console.log(x+y); //Nan
+        console.log(x + null) //10
+        
+
+
+     
+        var f_name = "john"
+        var lastname
+        // console.log(lastname)   //undefined
+        // console.log(f_name+lastname) //johnundefined
+        // console.log(f_name+NaN) //johnNaN
+        // console.log(f_name-NaN) //nan
+        // console.log(f_name+20) //john20
+        // console.log(f_name-20) //nan
+        // console.log(f_name+true) //johntrue
+        // console.log(f_name-false) //nan
+
+        var number = '4'
+        //string with a plus always concatenate
+        //if minus string tries to convert to number and then perform operation
+        //number is enclosed in bracket number+true = 10+1 = 11
+        //number-true=NaN
+        // console.log(x+number) //104
+        // console.log(number+true) //4true
+        // console.log(x+true) //11
+        // console.log(number-true) //3
+        // console.log(number*2) //8
+        
+        //string converted to number
+
+
+        // console.log(true+undefined) //NaN
+        // console.log(true+true)      //2
+        // console.log(true*true)      //1
+        // console.log('dk'+undefined) //dkundefined
+
+        //checks if string(or any other data type) can be converted to number
+        //string-(anything) is NaN
+
+        // console.log(typeof(NaN))
+        // console.log(typeof(undefined))
+        // console.log(typeof(null))
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!-- 
+    append - inside p at end
+    prepend - inside p at beginning
+    after - outside p after p
+    before - outside p befor p
+    .eq(1) at 1st index append or 
+    : gt(2) all indexes greater than 2
+    
+    //REMOVE ELEMENTS
+    remove : suppose paras inside div...all gone including div
+    empty : suppose paras inside div....paras gone
+    
+    #div{
+
+        $(this).css('color','green') pointing to parent_div
+    }
+
+
+    // $('p:first') //first paragraph of document
+    // $('p:last') //last paragraph of document
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+</head>
+<body>
+    
+
+    <p id="p1">
+        this is a p text
+    </p>
+
+    <br><br>
+
+    <ul id="mobiles">
+        <li>apple</li>
+        <li>samsung</li>
+        <li>redmi</li>
+    </ul>
+
+    <p id="removed_p">
+        <p id="p2">
+            Paragraph to be removed
+        </p>
+        <p id="demo">
+            This is also a paragraph to be removed
+        </p>
+    </p>
+
+    <script>
+        $('#p1').before('This is before text')
+        $('#p1').prepend('this is an prepend text')
+        $('#p1').append('this is an appended text')
+        $('#p1').append('this is an appended text with html <b>tag inside</b>')
+        $('#p1').after('This is after text')
+
+        $('#mobiles').append('<li>realme_append</relme>')
+        $('#mobiles').prepend('<li>realme_prepend</relme>')
+        $('#mobiles').after('<li>realme_after</relme>')
+        $('#mobiles').before('<li>realme_before</relme>')
+
+        $('li').eq(3).after('<li>realme_eq(3)_append</li>')
+
+        $('p').remove('#p2','#demo')
+    </script>
+</body>
+</html>

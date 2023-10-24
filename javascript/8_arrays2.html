@@ -1,0 +1,116 @@
+<!-- 
+    CONCAT:
+    - concatenates (joins) two or more arrays.
+    - returns a new array, containing the joined arrays.
+    - does not change the existing arrays.
+    - array1.concat(array2, array3, ..., arrayX)
+    SLICE:
+    - returns selected elements in an array, as a new array.
+    - selects from a given start, up to a (not inclusive) given end.
+    - does not change the original array.
+    - array.slice(start, end)
+    SPLICE:
+    - adds and/or removes array elements.
+    - overwrites the original array.
+    - array.splice(index, howmany, item1, ....., itemX)
+
+    Spread and Destructuring are new features of ES-6
+    typeof m and typeof(m) both correct - used both property and method
+    DESCTRUCING:
+    -assign variables to array without doing the indexing and asssigning and all 
+
+    REST:
+    -With the help of a rest parameter, a function can be called with any number of arguments, no matter how it was defined
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var A = [1,2,3,4,5]
+        var B = [6,7,8,9]
+        // A.push(B) //new array at 5th index
+        // console.log(A)
+        var result = A.concat(B)
+        // console.log(result) //joins two arrays
+
+        const C = [A,B]
+        // console.log(C) //multidimensionaal array
+        // console.log(C[0][3]) //5th index of first array
+
+        //SPREAD OPERATOR
+        const D = [...A,...B]
+        const E = [...C,...result]
+        // console.log(D)
+        // console.log(E)
+
+        //FLAT - it reduces dimensions__only one dimension is reduced
+        const Arr = [1,2,[3,[4,5]],6,7,[8,9]] //array of arrays
+        // console.log(Arr.flat())
+        // console.log(Arr.flat().flat()) //another dimension is reduced here..[4,5]
+
+
+        let color = ["red", "green","blue","orange","yellow","pink"]
+        // console.log(...color)
+    
+        // console.log(color.flat())
+        
+        // console.log(color.slice(-4,-2)) //blue,orange
+        // console.log(color.slice(-2,-4)) //[]
+        // console.log(color.slice(2,4))  //blue orange
+        // console.log(color.splice(2,2)) //from second position 2 elemetns are removed
+        // console.log(color)
+
+        // console.log(color.splice(2,2,'lylac','maroon','aaqua'))
+        // console.log(color)
+
+        let n = color.length
+        for (let i=0; i<n; i++)
+        {
+            //remove start with 'g' or end with 'e' and replace them with 'NA'
+            if(color[i].startsWith('g') || color[i].endsWith('e') ) {
+                color.splice(i,1) //length and index should be reduced
+                i--;
+                n--;
+            }
+        }
+
+        // console.log(color)
+
+        //DESTRUCTURING A ARRAY
+        var cities = ['hyd','bglr','mum','del','kanp']
+        // var h = cities[0]
+        // var b = cities[1]
+        // var m = cities[2]
+
+        // const[h,b,m] = cities
+        // const[h,b] = cities
+        // console.log(h)
+
+        // const[h,b,m,d] = cities
+        // console.log(d) //undefined
+        
+        const[h,b,m,...r] = cities
+        // console.log(r)
+
+
+        //REST OPERATOR
+        function Add(...a) {
+            sum =0
+            for(x of a)
+            {
+                sum+=x;
+            }
+            return sum
+        }
+
+        console.log(Add(1,2,3,4,5,6,7,8,9,10))
+
+    </script>
+</body>
+</html>

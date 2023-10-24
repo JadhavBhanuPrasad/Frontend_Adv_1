@@ -1,0 +1,84 @@
+<!-- 
+    sycnchronous : execution happens in same order in which it is called, but in this case if 2nd function takes more time then 3rd one waits for 2nd to complete and it is not good
+
+    set interval , set time out : makes asynchronous
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="clrInt()">Clear Interval</button>
+    <script>
+        // //SYNCHRONOUS
+
+        // func1()
+        // func3()
+        // func2()
+
+        // function func1()
+        // {
+        //     console.log('func1')
+        // }
+        // function func2()
+        // {
+        //     console.log('func2')
+        // }
+        // function func3()
+        // {
+        //     console.log('func3')
+        // }
+
+        //ASYNCHRONOUS
+        
+        // setTimeout(func1,3000) //after 3 seconds func1 is called by that time 3 and 2 are run, so made asynchronous
+        // setTimeout( ()=>{
+        //     console.log("called after 5 seconds")
+        // } , 5000)
+        // func3()
+        // func2()
+        
+
+        // setInterval( () => {
+        //     console.log("called every 2 seconds")
+        // } , 2000)
+        // setInterval(func4,4000)
+
+
+        const internalFun = setInterval( ()=> {
+            console.log('call every 2 seconds')
+        } ,2000)
+        function clrInt()
+        {
+            clearInterval(internalFun)
+        }
+
+        
+
+        function func1()
+        {
+            console.log('func1')
+        }
+        function func2()
+        {
+            console.log('func2')
+        }
+        function func3()
+        {
+            console.log('func3')
+        }
+        function func4()
+        {
+            console.log('func4')
+        }
+
+
+
+    </script>
+</body>
+</html>

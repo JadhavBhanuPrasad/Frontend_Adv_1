@@ -1,0 +1,76 @@
+
+<!-- 
+    var is FUNCTION SCOPE
+        defined inside a function then outside the function it cannot be used
+    let and const is BLOCK SCOPE
+
+    String.fromCharCode() -> asci code to char
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var x = 10
+        let y = 15
+        const z = 20
+
+        function scope()
+        {
+            var t = 30
+            console.log(x,y,z)
+        }
+        // scope()
+
+        {
+            var a = 1
+            let b = 2
+            const c = 3
+        }
+
+        // console.log(a,b,c) //error
+        // console.log(t) //error
+
+        var arr = [true,false,true,true,null,undefined,false,null]
+        const totalTrue = arr.reduce( (count,item) => {
+            // if(item)
+            //     count++
+            // return count
+            return item ? count+1 : count
+            
+        },0)
+        console.log(totalTrue)
+
+        var str = Array.from("Hello") //string to array
+
+        console.log(str)
+
+        const strAns = str.reduce( (initial,item) => {
+           return initial = initial+item+item
+        },'' )
+
+        console.log(strAns)
+
+        var a = 'a'
+        let b = a[0].charCodeAt()  //give asci value 
+        console.log(b)
+        console.log(String.fromCharCode(b+1))  //convert asci value to character
+        
+
+        const nextAns = str.reduce( (initial, item) => {
+            let asciCode = item.charCodeAt()
+            return initial = initial + String.fromCharCode(asciCode+1)
+            // return initial
+        },'')
+                               
+        console.log(nextAns)
+                
+    </script>
+
+</body>
+</html>

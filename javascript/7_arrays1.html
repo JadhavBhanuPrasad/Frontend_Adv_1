@@ -1,0 +1,78 @@
+<!-- ARRAYS
+//only 1d arrays useful in web point of view
+
+pop : remove at end
+shift : remove at start
+
+push : add at end
+unshift : add at start
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numbers = [1,2,3,4,5,6,7,8];
+        let n = numbers.length
+
+        for(let i = 0; i<n/2; i++)
+        {   
+            let temp;
+
+            temp = numbers[i];
+            numbers[i] = numbers[n-1-i];
+            numbers[n-1-i] = temp;
+        }
+        // console.log(numbers);
+
+        // var numbers2 = [1,2,3,4,5,6]
+        // var res = new Array();
+        // for(x in numbers2) {
+        //     res.push(x)
+        // }
+        // console.log(res)
+
+        var numbers3 = [3,5,7,8,4]
+        numbers3.unshift(0)
+        numbers3.push(6)
+
+        // console.log(numbers3)
+
+        var x = [3,2,5,6]
+        var y = [6,7,9,2,1,4]
+        var ans = []
+        for(let i =0 ; i<x.length; i++) {
+            ans.push(x[i])
+        }
+        for(let i =0 ; i<y.length; i++) {
+            if(!x.includes(y[i]))
+                ans.push(y[i])
+        }
+
+        // console.log(num1.concat(num2))
+        var anss = [...x,...y]
+        // console.log(anss)
+        // console.log(ans)
+
+        var num4 = [1,2,3,4,5,6]
+        var len = num4.length
+
+        for(let i=0; i<len/2; i++)
+        {
+             temp = num4[i]            
+            num4[i] = num4[len/2 + i]
+            num4[len/2 + i] = temp
+
+        }
+
+        console.log(num4)
+    </script>
+</body>
+</html>

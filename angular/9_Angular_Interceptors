@@ -1,0 +1,30 @@
+mediator bw request and response
+req goes by interceptor and resp comes by interceptor
+
+it can also change incoming response from backend
+
+it is a typescript class declared as interceptor
+
+it works with http requests
+
+multiple interceptors form forward and backward chaain
+
+implement() in HttpInterceptor interface
+
+interceptor in order that you provide, goes both ways, forward and backward
+<->...<->...<->
+
+interceptor can give observable to emit multiple values
+
+                AUTHGUARD AUTHENTICATION
+
+to restrict the user
+
+angualr route guard that is ued to stop unauthenticated users from accessing the protected routes
+
+ite implemented using "CanActivate" interface,
+
+
+two types of guards:
+1.AuthenticationGuarad -> check if user is authenticaated and allow hm to access Home
+2.RoleGuard -> check if the user has permission to access User of Admin Dashboard

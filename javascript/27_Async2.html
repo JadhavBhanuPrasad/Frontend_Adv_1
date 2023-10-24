@@ -1,0 +1,33 @@
+<!-- 
+    paralllel execution is possible in asynchronous but it causes problems, so 'callbacks' are used
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // setTimeout( ()=> {
+        //     for(let i=1; i<6; i++)
+        //     {
+        //         console.log(i)
+        //     }
+        // } ,3000)
+
+        // 6 printed 5 times. asynchronous methods are put in callback queue and synchronous kept in call stack...so every iteration is kept in callback queue and by that time it logs the value, the value in 'i' is six. 'var'  should only be used, not 'let'
+        for(var i=1; i<6; i++){
+
+            setTimeout( ()=>{
+                console.log(i)
+            } ,3000)
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+<!-- 
+    rest operator used in functions for passing any no. of parameters
+    spread operator for destructring(arrays,..etc)
+
+    OPTIONAL PARAMETER or DEFAULT PARAMETER : 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        function Greeting()
+        {
+            console.log('hello')
+            return 
+        }
+            Greeting()
+
+        function getName()
+        {
+            return 'Nag'
+        }
+            console.log(getName())
+
+        function Add(x,y)
+        {
+            console.log(x+y)
+        }
+            Add(3,4)
+
+        function Multiply(x,y=5) //right most parameter must be default parameter or give both, but dont give to left one..'Multiply(x=6,y)' is wrong...OPTIONAL PARAMETER or DEFAULT PARAMETER
+        {
+            return x*y
+        }
+            console.log(Multiply(5,9))
+            console.log(Multiply(4))
+    
+        
+    </script>
+
+</body>
+</html>

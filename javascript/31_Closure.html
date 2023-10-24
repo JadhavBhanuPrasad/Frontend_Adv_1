@@ -1,0 +1,42 @@
+<!-- 
+    CLOSURE - to solve the problem of global variable
+    lexical scoping : nested functions outer var can be used in inside one
+
+    returning inner function...it not only returns its values but also remembers parents values
+    child takes the lexical scoping of parent
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">
+
+    </p>
+    <button id="btn1" onclick="change()">counter</button>
+    <!-- <button id="btn1" onclick="some()">counter</button> -->
+
+    <script>
+        const result = function()
+        {
+            var counter = 0 //memory allocated
+
+            return function inner() {
+                counter = counter+1 //from next time it points to its address 
+                console.log("counter : "+counter)
+                return counter
+            }
+        }(); 
+
+        function change()
+        {
+            document.getElementById('p1').innerHTML = result();
+        }
+
+    </script>
+</body>
+</html>

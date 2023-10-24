@@ -1,0 +1,132 @@
+<!-- 
+    -for(initialization; condition; increment or decrement){
+    <br> to go next line
+
+    -while loop -> initialization before loop___condition in while___increment or decrement inside loop
+
+    -while is faster than for loop(less time complexity)
+
+    -do while in menu driven items
+    
+    JUMP STATEMENTS
+    -continue; -> will skip that one iteration and go to top
+    -break; -> comes out of the IMMEDIATE LOOP..makes sense only if we use in iteratives and switch cases
+    } 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // for(let i=0 ; i<10;i++)
+        // {
+        //         console.log(i);
+        //     }
+            
+        // console.log(undefined<10); //false
+        // let i;
+        // for(;i<10;i++) { //wont execute
+        //     console.log(i);
+        // }
+
+        // for(let i=1;;i++){ //infinite loop
+        // }
+
+        // for(let i=10;i>0;i--){
+        //     console.log(i);
+        // }
+
+
+
+        // var a = 4;
+
+        // for(let i=1; i<=10; i++){
+            
+        
+        //     var z = "<td>"+a+"</td>"+
+        //     "<td>*</td>"+
+        //     "<td>"+i+"</td>"+
+        //     "<td>=</td>"+
+        //     "<td>"+a*i+"</td>";
+
+        //     var res = "<table border=1>"+"<tr>"+ z+"</tr>"+"</table";
+    
+        //     document.write(res);
+        // }
+
+        // let i=1;
+
+        // while(i<10)
+        // {
+        //     i++;
+        //     console.log(i);
+        // }
+
+        //number of digits
+        var a = -34233;
+        count = 0;
+        if(a>0){
+            while(a>0){
+            a=parseInt(a/10);
+            // console.log(a);
+            count++;
+        }
+        }
+        else if(a == 0) {
+            // console.log(count);
+        }
+        else{
+            while(a<0){
+            a=parseInt(a/10);
+            // console.log(a);
+            count++;
+            }
+        }
+        // console.log(count);
+
+        //var x = 1;
+        // while(x<10); //infinite loop.... if we put ; then it is end of the statement
+        //{console.log(x); x++}
+
+        for(let x = 1;x<6;x++) {
+            for(let y = 1; y<=x;y++){
+                document.write("*");
+                document.write("  ");
+            }
+            document.write("<br><br>")
+        }
+        let z =0;
+        for(let x = 1;x<6;x++) {
+            for(let y = 1; y<=x;y++){
+                z++;
+                document.write(z);
+                document.write("  ");
+            }
+            document.write("<br><br>")
+        }
+
+        for(let x=1; x<=5; x++)
+        {
+            for(let y=1; y<=5; y++)
+            {
+                if(x==y ||  x+y == 6){
+                    document.write("*");
+                }
+                else{
+                    document.write("&nbsp");//give space in html page
+                }
+            }
+            document.write("<br>")
+        }
+  
+
+    </script>
+</body>
+</html>

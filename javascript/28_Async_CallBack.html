@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+function register(SE){
+    setTimeout( function() {
+        console.log('register done')
+        SE()
+    } ,7000 )
+
+}
+function sendEmail(LG){
+    setTimeout( function() {
+        console.log("email sent")
+        LG()
+    },3000)
+}
+function login(user) {
+    setTimeout( function() {
+        console.log("login done")
+        user()
+    },5000)
+}
+
+function displayUserData()
+{
+    console.log("Displaying user data")
+}
+
+
+//CALLBACK HELL
+register(function(){
+    sendEmail( function() {
+        login(function() {
+            displayUserData();
+        })
+    })
+})
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!-- 
+Mouse Events:
+Mouseover
+
+Hover:
+click,dblclick
+
+Keyboard:
+keypress,keydown,keyup
+
+Attr:
+attr('src','/img.jpg')
+
+visibility :
+show()
+hide()
+toggled()
+fadeIn()
+fadeOut()
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ip">
+    <p id="op"></p>
+
+    <img src="jquery/on.jpg" alt="" id="img">
+    <button id="clk" value="OFF">OFF</button>
+
+    <button id="clicks">HIDE</button>
+
+    <p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi molestiae voluptate tempora inventore porro dolores, laborum et, accusamus incidunt temporibus repellendus, fugiat quos quam eos placeat ex facere id ea sapiente laboriosam non sequi quod quisquam iure! Distinctio accusantium maxime sapiente corrupti aliquam ut doloremque?</p>
+
+    <script>
+        $(function() {
+
+            $('#ip').keyup( function() {
+                let x = $('#ip').val()
+                $('#op').text(x)
+            })
+
+
+            $('#clk').click( function() {
+                if( $('#clk').text()=='OFF' ) {
+                    $('#img').attr('src','jquery/off.jpg')
+                    $('#clk').text("ON")
+                // $('#clk').val('off')
+                }
+                else {
+                    $('#clk').text("OFF")
+                    $('#img').attr('src','jquery/on.jpg')
+                    // $('#clk').val('on')
+                }
+            })
+
+            let cnt = 0
+            $('#clicks').click( function() {
+                cnt++;
+                if(cnt == 5) {
+                    $('#clk').toggle()
+                    // $('#clk').hide(2000)
+                    // $('#clk').show(2000)
+                    // $('#clk').fadeOut(2000)
+                    cnt = 0
+                } 
+            })
+
+            $('#p1').hover( function() {
+                $('#p1').fadeOut(3000)
+            })
+
+        })
+    </script>
+</body>
+</html>

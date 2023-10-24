@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="maindiv">
+        <p id="p1">Existing Para</p>
+    </div>
+
+    <script>
+        var parentDiv = document.getElementById('maindiv');
+        
+        
+        //create paragraph
+        var para = document.createElement('p')
+        para.setAttribute('id','p3') //like key value pair
+        para.innerHTML = "this is a beautiful dynamic heading written by me"
+        parentDiv.appendChild(para)
+        
+        
+        //create heading
+        var heading = document.createElement('h3')
+        heading.innerHTML = "Dynamic Heading"
+        heading.insertBefore(para,null) // element.insertBefore(new, existing)
+        parentDiv.appendChild(heading)
+        
+        
+        //remove child
+        var exist = document.getElementById('p1')
+        // console.log(exist)
+        parentDiv.removeChild(exist)
+
+        
+        //remove dynamically generated 
+        var dyna = document.getElementById('p3')
+        heading.removeChild(dyna)
+
+    </script>
+</body>
+</html>
